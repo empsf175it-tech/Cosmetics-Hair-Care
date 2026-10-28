@@ -345,6 +345,8 @@
         hasRun = true;
         counters.forEach(counter => {
           const target = parseFloat(counter.dataset.target);
+          const suffix = counter.dataset.suffix || '';
+          const prefix = counter.dataset.prefix || '';
           const duration = 2000;
           const startTime = performance.now();
           const isDecimal = target % 1 !== 0;
@@ -356,16 +358,18 @@
             const easeProgress = 1 - Math.pow(1 - progress, 3);
             const current = easeProgress * target;
 
-            counter.textContent = isDecimal 
+            const formatted = isDecimal 
               ? current.toFixed(1) 
               : Math.floor(current).toLocaleString();
+            counter.textContent = prefix + formatted + suffix;
 
             if (progress < 1) {
               requestAnimationFrame(updateCounter);
             } else {
-              counter.textContent = isDecimal 
+              const finalVal = isDecimal 
                 ? target.toFixed(1) 
                 : target.toLocaleString();
+              counter.textContent = prefix + finalVal + suffix;
             }
           }
 

@@ -2084,7 +2084,8 @@ input:checked + .switch-slider:before {
 .product-image-container {
   position: relative;
   width: 100%;
-  height: 240px;
+  aspect-ratio: 1 / 1;
+  height: auto;
   border-radius: 14px;
   overflow: hidden;
   margin-bottom: 18px;
@@ -2374,6 +2375,25 @@ input:checked + .switch-slider:before {
   text-align: left;
   margin-bottom: 6px;
   color: var(--champagne);
+}
+
+.bundle-price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.bundle-price-num {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--pearl);
+}
+
+.bundle-orig-price {
+  text-decoration: line-through;
+  color: var(--text-muted);
 }
 
 /* Ingredient Transparency */
@@ -4483,6 +4503,84 @@ input:checked + .switch-slider:before {
   .product-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+  .product-image-container {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    height: auto;
+  }
+  .product-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .bundle-card {
+    grid-template-columns: 1fr;
+    padding: 28px 24px;
+    gap: 24px;
+    text-align: center;
+  }
+  .bundle-info {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .bundle-info h3,
+  .bundle-tagline,
+  .bundle-included-list,
+  .bundle-included-list li {
+    text-align: center;
+  }
+  .bundle-price-row {
+    justify-content: center !important;
+    text-align: center !important;
+    width: 100% !important;
+  }
+  .rec-prod-price-row {
+    justify-content: center !important;
+    width: 100% !important;
+  }
+  .qv-price-row {
+    justify-content: center !important;
+    width: 100% !important;
+  }
+  .bundle-img-wrap {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 10;
+    max-height: 380px;
+  }
+  .bundle-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  .article-img-wrap {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    min-height: 200px;
+  }
+  .concern-photo-card {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 10;
+    min-height: 240px;
+  }
+  .prescribed-prod-img-wrap {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    max-height: 200px;
+  }
+  .qv-product-img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    max-height: 420px;
+    object-fit: cover;
+  }
   .shop-layout {
     grid-template-columns: 1fr;
   }
@@ -4517,8 +4615,68 @@ input:checked + .switch-slider:before {
   .review-gallery-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+  .site-footer {
+    padding: 64px 0 36px;
+  }
   .footer-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 36px 28px !important;
+    margin-bottom: 44px !important;
+  }
+  .footer-brand-col {
+    grid-column: 1 / -1 !important;
+    text-align: center !important;
+    max-width: 640px !important;
+    margin: 0 auto 10px !important;
+    padding-bottom: 24px !important;
+    border-bottom: 1px solid rgba(201, 139, 122, 0.18) !important;
+  }
+  .footer-brand-col .brand-logo {
+    justify-content: center !important;
+    margin: 0 auto 12px !important;
+  }
+  .footer-brand-col p {
+    margin: 12px auto 16px !important;
+    text-align: center !important;
+    font-size: 0.92rem !important;
+    line-height: 1.65 !important;
+  }
+  .footer-social-row {
+    justify-content: center !important;
+    margin-top: 14px !important;
+    gap: 12px !important;
+  }
+  .footer-col {
+    text-align: center !important;
+  }
+  .footer-col h4 {
+    margin-bottom: 16px !important;
+    text-align: center !important;
+    font-size: 1.08rem !important;
+    color: var(--pearl) !important;
+    position: relative !important;
+    padding-bottom: 8px !important;
+  }
+  .footer-col h4::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 26px;
+    height: 1.5px;
+    background: var(--rose-gold);
+    opacity: 0.7;
+  }
+  .footer-links-list {
+    align-items: center !important;
+    text-align: center !important;
+    gap: 10px !important;
+  }
+  .footer-links-list li,
+  .footer-links-list li a {
+    text-align: center !important;
+    font-size: 0.88rem !important;
   }
 }
 
@@ -4648,8 +4806,7 @@ input:checked + .switch-slider:before {
   .review-gallery-grid,
   .transparency-grid,
   .bundles-grid,
-  .box-builder-grid,
-  .footer-grid {
+  .box-builder-grid {
     grid-template-columns: 1fr;
     width: 100%;
     max-width: 100%;
@@ -4699,12 +4856,22 @@ input:checked + .switch-slider:before {
     gap: 20px;
     text-align: center;
   }
-  .bundle-info,
+  .bundle-info {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
   .bundle-info h3,
   .bundle-tagline,
   .bundle-included-list,
   .bundle-included-list li {
     text-align: center;
+  }
+  .bundle-price-row {
+    justify-content: center !important;
+    text-align: center !important;
+    width: 100% !important;
   }
   /* Build-Your-Box Interactive Customizer Mobile Center Alignment */
   .build-box-card {
@@ -5168,7 +5335,8 @@ input:checked + .switch-slider:before {
   }
 
   .concern-photo-card {
-    height: 200px;
+    height: auto;
+    aspect-ratio: 16 / 10;
   }
   .qv-grid {
     grid-template-columns: 1fr;
@@ -5212,17 +5380,147 @@ input:checked + .switch-slider:before {
     margin-left: auto;
     margin-right: auto;
   }
+  /* Mobile & iPad Mini Luxury Footer Styling */
+  .site-footer {
+    padding: 52px 0 110px !important;
+  }
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+    justify-items: center !important;
+    gap: 28px !important;
+    margin-bottom: 36px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  .footer-brand-col {
+    grid-column: 1 / -1 !important;
+    text-align: center !important;
+    width: 100% !important;
+    max-width: 540px !important;
+    margin: 0 auto 4px !important;
+    padding-bottom: 24px !important;
+    border-bottom: 1px solid rgba(201, 139, 122, 0.18) !important;
+  }
+  .footer-brand-col .brand-logo {
+    justify-content: center !important;
+    margin: 0 auto 12px !important;
+  }
+  .footer-brand-col p {
+    font-size: 0.88rem !important;
+    line-height: 1.6 !important;
+    margin: 10px auto 14px !important;
+    max-width: 440px !important;
+    text-align: center !important;
+  }
+  .footer-social-row {
+    justify-content: center !important;
+    margin-top: 12px !important;
+    gap: 10px !important;
+  }
+  .footer-col,
+  .footer-col-nav,
+  .footer-col-policy {
+    grid-column: 1 / -1 !important;
+    width: 100% !important;
+    max-width: 540px !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+  }
+  .footer-col-nav h4,
+  .footer-col-policy h4 {
+    font-size: 1.05rem !important;
+    margin-bottom: 12px !important;
+    text-align: center !important;
+    color: var(--pearl) !important;
+    position: relative !important;
+    padding-bottom: 8px !important;
+  }
+  .footer-col-nav h4::after,
+  .footer-col-policy h4::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 26px;
+    height: 1.5px;
+    background: var(--rose-gold);
+    opacity: 0.7;
+  }
+  .footer-col-nav .footer-links-list,
+  .footer-col-policy .footer-links-list {
+    align-items: center !important;
+    text-align: center !important;
+    gap: 10px !important;
+  }
+  .footer-col-nav .footer-links-list li,
+  .footer-col-policy .footer-links-list li {
+    text-align: center !important;
+    width: 100% !important;
+  }
+  .footer-col-nav .footer-links-list li a,
+  .footer-col-policy .footer-links-list li a {
+    font-size: 0.88rem !important;
+    padding: 2px 0 !important;
+    display: inline-block !important;
+    text-align: center !important;
+  }
+  .footer-col-concierge {
+    grid-column: 1 / -1 !important;
+    width: 100% !important;
+    max-width: 540px !important;
+    margin: 4px auto !important;
+    background: rgba(38, 14, 44, 0.55) !important;
+    border: 1px solid rgba(201, 139, 122, 0.22) !important;
+    border-radius: 16px !important;
+    padding: 22px 18px !important;
+    text-align: center !important;
+  }
+  .footer-col-concierge h4 {
+    font-size: 1.05rem !important;
+    margin-bottom: 12px !important;
+    text-align: center !important;
+    color: var(--pearl) !important;
+    position: relative !important;
+    padding-bottom: 8px !important;
+  }
+  .footer-col-concierge h4::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 26px;
+    height: 1.5px;
+    background: var(--rose-gold);
+    opacity: 0.7;
+  }
+  .footer-col-concierge .footer-links-list {
+    align-items: center !important;
+    text-align: center !important;
+    gap: 8px !important;
+  }
+  .footer-col-concierge .footer-links-list li {
+    font-size: 0.85rem !important;
+    color: var(--champagne) !important;
+    line-height: 1.55 !important;
+    text-align: center !important;
+  }
   .footer-bottom {
-    flex-direction: column;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    gap: 16px;
+    flex-direction: column !important;
+    text-align: center !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 14px !important;
+    padding-top: 24px !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
   }
   .footer-payment-icons {
-    justify-content: center;
-    text-align: center;
-    width: 100%;
+    justify-content: center !important;
+    text-align: center !important;
+    width: 100% !important;
+    gap: 10px !important;
+    font-size: 0.8rem !important;
   }
   .chat-widget-toggle {
     bottom: 20px;

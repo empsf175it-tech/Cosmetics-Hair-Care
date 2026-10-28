@@ -1006,15 +1006,15 @@
       <div class="container">
         <div class="stats-grid">
           <div class="stat-item">
-            <div class="stat-count-num" data-target="142000">0</div>
+            <div class="stat-count-num" data-target="142000" data-suffix="+">0+</div>
             <div class="stat-label">Rituals Delivered</div>
           </div>
           <div class="stat-item">
-            <div class="stat-count-num" data-target="98.4">0</div>
-            <div class="stat-label">% Frizz Reduction</div>
+            <div class="stat-count-num" data-target="98.4" data-suffix="%">0%</div>
+            <div class="stat-label">Frizz Reduction</div>
           </div>
           <div class="stat-item">
-            <div class="stat-count-num" data-target="48500">0</div>
+            <div class="stat-count-num" data-target="48500" data-suffix="+">0+</div>
             <div class="stat-label">Diagnostic Profiles Solved</div>
           </div>
           <div class="stat-item">
@@ -1232,9 +1232,9 @@
                   <li>✦ Restorative Keratin Conditioner (300ml)</li>
                   <li>✦ Bonding Gloss Elixir (100ml)</li>
                 </ul>
-                <div style="display: flex; align-items: baseline; gap: 12px; margin-bottom: 18px;">
-                  <span style="font-family: var(--font-serif); font-size: 2rem; font-weight: 700; color: var(--pearl);">$74.00</span>
-                  <span style="text-decoration: line-through; color: var(--text-muted);">$92.00</span>
+                <div class="bundle-price-row">
+                  <span class="bundle-price-num">$74.00</span>
+                  <span class="bundle-orig-price">$92.00</span>
                 </div>
                 <button class="btn btn-rose add-bundle-btn" data-bundle-id="bundle-1">Add Kit to Cart</button>
               </div>
@@ -1255,9 +1255,9 @@
                   <li>✦ Intensive Argan & Shea Mask (250ml)</li>
                   <li>✦ Thermal Shield 450°F Mist (100ml)</li>
                 </ul>
-                <div style="display: flex; align-items: baseline; gap: 12px; margin-bottom: 18px;">
-                  <span style="font-family: var(--font-serif); font-size: 2rem; font-weight: 700; color: var(--pearl);">$98.00</span>
-                  <span style="text-decoration: line-through; color: var(--text-muted);">$125.00</span>
+                <div class="bundle-price-row">
+                  <span class="bundle-price-num">$98.00</span>
+                  <span class="bundle-orig-price">$125.00</span>
                 </div>
                 <button class="btn btn-rose add-bundle-btn" data-bundle-id="bundle-2">Add Kit to Cart</button>
               </div>
@@ -1949,7 +1949,7 @@
         </div>
 
         <!-- Quick Links (Strict: Anchor Links to the 4 sections) -->
-        <div class="footer-col">
+        <div class="footer-col footer-col-nav">
           <h4>Navigation</h4>
           <ul class="footer-links-list">
             <li><a href="#home">Home</a></li>
@@ -1961,7 +1961,7 @@
         </div>
 
         <!-- Contact & Concierge -->
-        <div class="footer-col">
+        <div class="footer-col footer-col-concierge">
           <h4>Client Concierge</h4>
           <ul class="footer-links-list">
             <li>Email: concierge@aurellehairlab.com</li>
@@ -1972,7 +1972,7 @@
         </div>
 
         <!-- Legal Modals & Trust -->
-        <div class="footer-col">
+        <div class="footer-col footer-col-policy">
           <h4>Assurance & Policy</h4>
           <ul class="footer-links-list">
             <li><a href="#!" id="openPrivacyModalLink">Privacy Policy</a></li>
