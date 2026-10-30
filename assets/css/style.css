@@ -875,6 +875,16 @@ button, input, select, textarea {
 .feature-card {
   padding: 44px 30px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.feature-card .tilt-depth {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  flex: 1;
 }
 
 .feature-icon-wrap {
@@ -900,11 +910,16 @@ button, input, select, textarea {
 .feature-title {
   margin-bottom: 14px;
   font-size: 1.35rem;
+  min-height: 2.6em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .feature-desc {
   font-size: 0.95rem;
   line-height: 1.7;
+  flex: 1;
 }
 
 /* ==========================================================================
@@ -1536,6 +1551,18 @@ button, input, select, textarea {
 .review-card {
   padding: 28px 24px;
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  text-align: center;
+}
+
+.review-card-inner {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  flex: 1;
+  text-align: center;
 }
 
 .review-photo-wrap {
@@ -1547,6 +1574,7 @@ button, input, select, textarea {
   overflow: hidden;
   border: 2px solid var(--rose-gold);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  flex-shrink: 0;
 }
 
 .review-user-photo {
@@ -1567,28 +1595,51 @@ button, input, select, textarea {
   border: 1px solid rgba(217, 164, 65, 0.3);
 }
 
+.review-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  text-align: center;
+}
+
 .review-stars {
   color: var(--argan-gold);
   letter-spacing: 2px;
   margin-bottom: 10px;
+  flex-shrink: 0;
 }
 
 .review-headline {
   font-size: 1.15rem;
+  line-height: 1.4;
   margin-bottom: 10px;
+  min-height: 2.8em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
 }
 
 .review-quote {
   font-size: 0.92rem;
   line-height: 1.7;
   margin-bottom: 16px;
+  flex: 1;
 }
 
 .review-author-meta {
+  margin-top: auto;
   display: flex;
   flex-direction: column;
   gap: 4px;
   font-size: 0.85rem;
+  flex-shrink: 0;
+}
+
+.review-author-name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--pearl);
 }
 
 .review-verified-badge {
@@ -2699,6 +2750,16 @@ input:checked + .switch-slider:before {
 
 .expert-card {
   padding: 36px 24px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.expert-card .tilt-depth {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  flex: 1;
 }
 
 .expert-photo-wrap {
@@ -2727,6 +2788,11 @@ input:checked + .switch-slider:before {
   font-size: 0.88rem;
   line-height: 1.6;
   margin-bottom: 20px;
+  flex: 1;
+}
+
+.expert-card .book-consult-btn {
+  margin-top: auto;
 }
 
 /* Knowledge Hub Articles */
